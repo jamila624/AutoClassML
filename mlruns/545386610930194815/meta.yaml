@@ -1,0 +1,7 @@
+artifact_location: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815
+creation_time: 1773310231695
+experiment_id: '545386610930194815'
+last_update_time: 1773310231695
+lifecycle_stage: active
+name: vehicle_classification
+workspace: default
