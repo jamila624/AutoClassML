@@ -6,7 +6,7 @@ Projet complet de machine learning (Backend, Frontend) pour classer des véhicul
 
 1. **FastAPI (Backend)** : 
    - Expose l'API de prédiction sur `http://localhost:8000/predict`.
-   - Charge le meilleur modèle entraîné, l'encodeur de label, et le scaler.
+   - Charge le meilleur modèle entraîné (`model_v1.pkl`), les encodeurs (`label_encoder_v1.pkl`, `fuel_encoder_v1.pkl`) et le scaler (`scaler_v1.pkl`).
 2. **MLflow** : 
    - Enregistre les métriques d'entraînement (Accuracy, Precision, Recall, F1-Score) et les hyperparamètres de 4 modèles : KNN, SVM, Random Forest, Logistic Regression.
 3. **React (Frontend)** : 
@@ -60,7 +60,7 @@ python train.py
 ```
 Cela génère le dossier `models/` avec les objets `joblib` et `mlruns/` avec les logs d'expériences.
 
-### 3. Tests et Visualisation (Optionnel)
+### 3. Évaluation et Tests (Optionnel)
 
 Pour évaluer et voir les résultats dans la console :
 ```bash
