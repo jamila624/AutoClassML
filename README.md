@@ -1,6 +1,6 @@
 # Vehicle Classification ML Project
 
-Projet complet de machine learning (Backend, Frontend) pour classer des véhicules (opel, saab, bus, van) à partir de 18 caractéristiques géométriques.
+Projet complet de machine learning (Backend, Frontend) pour classer des véhicules (moto, voiture, camion) selon leurs caractéristiques techniques (poids, puissance, etc.).
 
 ## Structure Fonctionnelle
 
