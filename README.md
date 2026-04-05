@@ -11,10 +11,8 @@ Projet complet de machine learning (Backend, Frontend) pour classer des véhicul
    - Enregistre les métriques d'entraînement (Accuracy, Precision, Recall, F1-Score) et les hyperparamètres de 4 modèles : KNN, SVM, Random Forest, Logistic Regression.
 3. **React (Frontend)** : 
    - Interface utilisateur moderne connectée au backend.
-   - Formulaire dynamique de 18 champs avec rendu du résultat immédiat.
-4. **Visualisation (PCA)** :
-   - Contient un script pour sauvegarder une projection 2D des features via l'Analyse en Composantes Principales (PCA/t-SNE).
-5. **Tests API Automatises** :
+   - Formulaire dynamique de 4 champs (Poids, Puissance, Carburant, Portes) avec rendu du résultat immédiat.
+4. **Tests API Automatisés** :
    - Intégration de `pytest` pour valider l'inférence.
 
 ## 🚀 Installation & Lancement
@@ -69,14 +67,9 @@ Pour évaluer et voir les résultats dans la console :
 python evaluate.py
 ```
 
-Pour visualiser la réduction de dimension PCA (génère `pca_visualization.png`) :
+Pour lancer les tests unitaires de l'API (à la racine du projet, assurez-vous d'avoir entraîné les modèles d'abord):
 ```bash
-python visualize.py
-```
-
-Pour lancer les tests unitaires de l'API (assurez-vous d'avoir entraîné les modèles d'abord):
-```bash
-pytest test_app.py
+pytest tests/test_app.py
 ```
 
 Pour explorer l'interface web MLflow :
