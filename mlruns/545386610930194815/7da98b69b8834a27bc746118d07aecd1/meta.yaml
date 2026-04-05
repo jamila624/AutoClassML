@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/7da98b69b8834a27bc746118d07aecd1/artifacts
+end_time: 1775224703514
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: 7da98b69b8834a27bc746118d07aecd1
+run_name: KNN
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775224700060
+status: 3
+tags: []
+user_id: dell

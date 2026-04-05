@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Exemple de classe personnalisée */
+.my-element {
+  @apply border-border; /* fonctionne après avoir défini border-border dans tailwind.config.js */
+}

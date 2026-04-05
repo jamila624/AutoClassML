@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/f049fa7979434effbeb6313e7eba7c47/artifacts
+end_time: 1775338553901
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: f049fa7979434effbeb6313e7eba7c47
+run_name: Random_Forest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775338550548
+status: 3
+tags: []
+user_id: dell

@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/3b0749cf5c23401ebb09388de97e8bae/artifacts
+end_time: 1775337172779
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: 3b0749cf5c23401ebb09388de97e8bae
+run_name: Logistic_Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775337169210
+status: 3
+tags: []
+user_id: dell

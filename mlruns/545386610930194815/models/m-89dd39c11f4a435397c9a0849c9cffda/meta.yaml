@@ -1,0 +1,10 @@
+artifact_location: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/models/m-89dd39c11f4a435397c9a0849c9cffda/artifacts
+creation_timestamp: 1775338202365
+experiment_id: '545386610930194815'
+last_updated_timestamp: 1775338207227
+model_id: m-89dd39c11f4a435397c9a0849c9cffda
+model_type: null
+name: model
+source_run_id: 1ff6f47c4860417eab374bf5668a4b7b
+status: 2
+status_message: null

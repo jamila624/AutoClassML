@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/3a76409f5a9b4a8cba647c77ef3db01b/artifacts
+end_time: 1775338550516
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: 3a76409f5a9b4a8cba647c77ef3db01b
+run_name: SVM
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775338547194
+status: 3
+tags: []
+user_id: dell

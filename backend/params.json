@@ -1,0 +1,26 @@
+{
+    "selected_models": [
+        "knn",
+        "svm",
+        "rf",
+        "lr"
+    ],
+    "params": {
+        "knn": {
+            "k": 8,
+            "weights": "uniform"
+        },
+        "svm": {
+            "kernel": "rbf",
+            "C": 1,
+            "gamma": "scale"
+        },
+        "rf": {
+            "n_estimators": 100,
+            "max_depth": ""
+        },
+        "lr": {
+            "max_iter": 100
+        }
+    }
+}

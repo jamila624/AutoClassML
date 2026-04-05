@@ -19,11 +19,20 @@ Projet complet de machine learning (Backend, Frontend) pour classer des véhicul
 
 ## 🚀 Installation & Lancement
 
-Vous pouvez lancer l'intégralité du projet en un seul clic sous Windows en utilisant le fichier batch :
-```bash
-./run_all.bat
+Vous pouvez lancer l'intégralité du projet automatiquement grâce aux scripts fournis :
+
+**Sous Windows** :
+Double-cliquez sur `start.bat` ou exécutez dans un terminal :
+```bat
+start.bat
 ```
-Cela démarrera FastAPI, MLflow, et le Frontend React dans des terminaux séparés.
+
+**Sous macOS/Linux** :
+```bash
+chmod +x start.sh
+./start.sh
+```
+Ces scripts se chargent de créer l'environnement virtuel, installer les dépendances (Python et Node.js), et lancer FastAPI (Backend), MLflow, et React (Frontend) en parallèle.
 
 ### 1. Prérequis & Setup Backend (Python)
 
