@@ -17,7 +17,9 @@ const MetricsCharts = ({ selectedModels }) => {
         'knn': 'KNN',
         'svm': 'SVM',
         'rf': 'Random_Forest',
-        'lr': 'Logistic_Regression'
+        'lr': 'Logistic_Regression',
+        'adaboost': 'AdaBoost',
+        'xgboost': 'XGBoost'
       };
 
       // 1. Filtrer les runs valides

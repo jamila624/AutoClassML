@@ -1,0 +1,7 @@
+# Remplace le contenu du fichier pyrefly.toml
+Set-Content "D:\projet_machine_learning\backend\pyrefly.toml" @"
+python_interpreter = "D:/projet_machine_learning/backend/venv/Scripts/python.exe"
+
+[errors]
+bad-argument-type = false
+"@

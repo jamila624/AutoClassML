@@ -171,6 +171,79 @@ const HyperparameterForm = ({ selectedModels, hyperparameters, setHyperparameter
             </div>
           </div>
         )}
+        
+        {selectedModels.includes('adaboost') && (
+          <div className="py-4 space-y-4">
+            <h4 className="font-semibold text-brand-blue flex items-center gap-2">AdaBoost</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-gray-600">Estimateurs (n_estimators)</label>
+                <input 
+                  type="number" 
+                  min="10" 
+                  max="1000"
+                  value={hyperparameters.adaboost?.n_estimators || 50} 
+                  onChange={(e) => handleParamChange('adaboost', 'n_estimators', parseInt(e.target.value))}
+                  className="w-full p-2 text-sm rounded border border-brand-gray focus:ring-1 focus:ring-brand-blue outline-none" 
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-gray-600">Learning Rate</label>
+                <input 
+                  type="number" 
+                  step="0.1"
+                  min="0.01"
+                  max="2.0"
+                  value={hyperparameters.adaboost?.learning_rate || 1.0} 
+                  onChange={(e) => handleParamChange('adaboost', 'learning_rate', parseFloat(e.target.value))}
+                  className="w-full p-2 text-sm rounded border border-brand-gray focus:ring-1 focus:ring-brand-blue outline-none" 
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {selectedModels.includes('xgboost') && (
+          <div className="py-4 space-y-4">
+            <h4 className="font-semibold text-brand-blue flex items-center gap-2">XGBoost</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-gray-600">Estimateurs (n_estimators)</label>
+                <input 
+                  type="number" 
+                  min="10" 
+                  max="1000"
+                  value={hyperparameters.xgboost?.n_estimators || 100} 
+                  onChange={(e) => handleParamChange('xgboost', 'n_estimators', parseInt(e.target.value))}
+                  className="w-full p-2 text-sm rounded border border-brand-gray focus:ring-1 focus:ring-brand-blue outline-none" 
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-gray-600">Profondeur Max (max_depth)</label>
+                <input 
+                  type="number" 
+                  min="1" 
+                  max="20"
+                  value={hyperparameters.xgboost?.max_depth || 6} 
+                  onChange={(e) => handleParamChange('xgboost', 'max_depth', parseInt(e.target.value))}
+                  className="w-full p-2 text-sm rounded border border-brand-gray focus:ring-1 focus:ring-brand-blue outline-none" 
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs font-semibold text-gray-600">Learning Rate</label>
+                <input 
+                  type="number" 
+                  step="0.05"
+                  min="0.01"
+                  max="1.0"
+                  value={hyperparameters.xgboost?.learning_rate || 0.1} 
+                  onChange={(e) => handleParamChange('xgboost', 'learning_rate', parseFloat(e.target.value))}
+                  className="w-full p-2 text-sm rounded border border-brand-gray focus:ring-1 focus:ring-brand-blue outline-none" 
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
       </CardContent>
     </Card>

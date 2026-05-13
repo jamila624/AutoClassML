@@ -9,12 +9,14 @@ import { useApp } from '../context/AppContext';
 
 const DashboardPage = () => {
   const { isDatasetLoaded } = useApp();
-  const [selectedModels, setSelectedModels] = useState(['knn', 'svm', 'rf', 'lr']);
+  const [selectedModels, setSelectedModels] = useState(['knn', 'svm', 'rf', 'lr', 'adaboost', 'xgboost']);
   const [hyperparameters, setHyperparameters] = useState({
     knn: { k: 5, weights: 'uniform' },
     svm: { kernel: 'rbf', C: 1.0, gamma: 'scale' },
     rf: { n_estimators: 100, max_depth: '' },
-    lr: { max_iter: 100 }
+    lr: { max_iter: 100 },
+    adaboost: { n_estimators: 50, learning_rate: 1.0 },
+    xgboost: { n_estimators: 100, max_depth: 6, learning_rate: 0.1 }
   });
   
   const [trainingStatus, setTrainingStatus] = useState('idle'); // 'idle', 'running', 'success', 'error'
@@ -36,7 +38,7 @@ const DashboardPage = () => {
   };
 
   const resetConfiguration = () => {
-    setSelectedModels(['knn', 'svm', 'rf', 'lr']);
+    setSelectedModels(['knn', 'svm', 'rf', 'lr', 'adaboost', 'xgboost']);
     setTrainingStatus('idle');
   };
 
@@ -54,7 +56,7 @@ const DashboardPage = () => {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-brand-gray pb-6">
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-3 text-brand-blue mb-2 text-slate-900">
+          <h1 className="text-3xl font-bold flex items-center gap-3 mb-2 text-slate-900">
              <Server className="text-brand-blue" /> Machine Learning Workspace
           </h1>
           <p className="text-gray-500">Comparez et optimisez les 4 algorithmes de pointe sur vos données techniques.</p>

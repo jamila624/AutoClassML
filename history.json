@@ -99,17 +99,6 @@
     "date": "2026-04-04 22:44"
   },
   {
-    "poids": 5000.0,
-    "puissance": 90.0,
-    "carburant": "essence",
-    "portes": 5,
-    "prediction": "camion",
-    "confidence": "moyenne",
-    "warnings_count": 1,
-    "id": 12,
-    "date": "2026-04-05 15:26"
-  },
-  {
     "poids": 120.0,
     "puissance": 90.0,
     "carburant": "essence",
@@ -163,5 +152,71 @@
     "warnings_count": 0,
     "id": 17,
     "date": "2026-04-05 17:21"
+  },
+  {
+    "poids": 100.0,
+    "puissance": 20.0,
+    "carburant": "essence",
+    "portes": 0,
+    "prediction": "moto",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 17,
+    "date": "2026-04-08 20:19"
+  },
+  {
+    "poids": 110.0,
+    "puissance": 60.0,
+    "carburant": "essence",
+    "portes": 0,
+    "prediction": "moto",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 18,
+    "date": "2026-04-09 10:50"
+  },
+  {
+    "poids": 3000.0,
+    "puissance": 90.0,
+    "carburant": "essence",
+    "portes": 2,
+    "prediction": "camion",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 19,
+    "date": "2026-05-12 23:42"
+  },
+  {
+    "poids": 1000.0,
+    "puissance": 90.0,
+    "carburant": "essence",
+    "portes": 2,
+    "prediction": "voiture",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 20,
+    "date": "2026-05-12 23:42"
+  },
+  {
+    "poids": 2000.0,
+    "puissance": 120.0,
+    "carburant": "essence",
+    "portes": 4,
+    "prediction": "voiture",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 21,
+    "date": "2026-05-13 20:06"
+  },
+  {
+    "poids": 2000.0,
+    "puissance": 120.0,
+    "carburant": "electrique",
+    "portes": 4,
+    "prediction": "voiture",
+    "confidence": "haute",
+    "warnings_count": 0,
+    "id": 22,
+    "date": "2026-05-13 20:28"
   }
 ]

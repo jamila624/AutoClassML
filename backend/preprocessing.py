@@ -38,13 +38,13 @@ def preprocess_data(X, y, models_dir='../models'):
     carburant_values = carburant_values.where(~mask_invalide, 'essence')
     X['carburant'] = le_carb.transform(carburant_values)
     
-    print(f"  [OK] 'carburant' encodé : {dict(zip(le_carb.classes_, le_carb.transform(le_carb.classes_)))}")
+    print(f"  [OK] 'carburant' encodé : {dict(zip(list(le_carb.classes_), list(le_carb.transform(le_carb.classes_))))}")
     joblib.dump(le_carb, os.path.join(models_dir, 'fuel_encoder_v1.pkl'))
 
     # 2. Encodage de la cible 'type' (variable de sortie)
     le_type = LabelEncoder()
     y_encoded = le_type.fit_transform(y)
-    print(f"  [OK] 'type' encodé : {dict(zip(le_type.classes_, le_type.transform(le_type.classes_)))}")
+    print(f"  [OK] 'type' encodé : {dict(zip(list(le_type.classes_), list(le_type.transform(le_type.classes_))))}")
     joblib.dump(le_type, os.path.join(models_dir, 'label_encoder_v1.pkl'))
 
     # 3. Vérification et conversion des types numériques

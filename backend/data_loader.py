@@ -70,8 +70,11 @@ def load_data(filepath='../vehicle_data.csv', clean=True):
         df = df[
             (df['poids']     >= 40)    & (df['poids']     <= 35000) &
             (df['puissance'] >= 1)     & (df['puissance'] <= 1200)  &
-            (df['portes']    >= 0)     & (df['portes']    <= 10)
+            (df['portes']    >= 0)     & (df['portes']    <= 4)
         ]
+        # Suppression explicite de la classe '5 portes' demandée par l'utilisateur
+        df = df[df['portes'] != 5]
+
         report['outliers'] = before - len(df)
         print(f"[4] Outliers physiques       : {report['outliers']}")
 
@@ -110,7 +113,7 @@ def load_data(filepath='../vehicle_data.csv', clean=True):
 
 if __name__ == "__main__":
     X, y = load_data()
-    if X is not None:
+    if X is not None and y is not None:
         print("\nFeatures preview :\n", X.head())
         print("\nClasses :\n", y.value_counts())
     else:

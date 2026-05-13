@@ -68,7 +68,7 @@ app.add_middleware(
 )
 
 # ── Constantes de validation ──────────────────────────────────────
-VALID_PORTES = [0, 1, 2, 3, 4, 5]
+VALID_PORTES = [0, 1, 2, 3, 4]
 VALID_CARBURANTS_LIST = ['essence', 'diesel', 'electrique']
 
 VALIDATION_RULES = {
@@ -154,7 +154,7 @@ class VehicleFeatures(BaseModel):
         if v not in VALID_PORTES:
             raise ValueError(
                 f"Le nombre de portes doit être parmi {VALID_PORTES}. Reçu : {v}. "
-                f"0-1 = moto, 2-3 = berline/camion, 4-5 = familiale."
+                f"0-1 = moto, 2-4 = berline/camion."
             )
         return v
 
@@ -183,7 +183,7 @@ def get_validation_rules():
         "rules": VALIDATION_RULES,
         "coherence_info": [
             "Moto (0 portes) : poids < 800 kg attendu",
-            "Voiture (3-5 portes) : poids >= 400 kg attendu",
+            "Voiture (2-4 portes) : poids >= 400 kg attendu",
             "Camion (poids > 3500 kg) : max 3 portes attendu",
             "Ratio puissance/poids : doit être < 2.0",
             "Camion (poids > 5000 kg) : puissance > 100 ch attendue",

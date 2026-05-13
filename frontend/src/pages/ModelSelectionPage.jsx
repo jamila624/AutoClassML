@@ -5,10 +5,12 @@ import { Button, Card, CardHeader, CardTitle, CardContent } from '../components/
 import { BrainCircuit, CheckCircle2, ChevronRight, Info } from 'lucide-react';
 
 const MODELS = [
-  { id: 'knn', name: 'K-Nearest Neighbors', desc: 'Simple, basé sur la proximité des données.', icon: '🧠' },
-  { id: 'svm', name: 'SVM', desc: 'Efficace pour les espaces de grande dimension.', icon: '🛡️' },
-  { id: 'rf', name: 'Random Forest', desc: 'Forêt d\'arbres décisionnels, très robuste.', icon: '🌲' },
-  { id: 'lr', name: 'Régression Logistique', desc: 'Idéal pour les classifications binaires et probabilistes.', icon: '📈' }
+  { id: 'knn',      name: 'K-Nearest Neighbors',   desc: 'Simple, basé sur la proximité des données.',                   icon: '🧠' },
+  { id: 'svm',      name: 'SVM',                   desc: 'Efficace pour les espaces de grande dimension.',                icon: '🛡️' },
+  { id: 'rf',       name: 'Random Forest',          desc: 'Forêt d\'arbres décisionnels, très robuste.',                  icon: '🌲' },
+  { id: 'lr',       name: 'Régression Logistique',  desc: 'Idéal pour les classifications binaires et probabilistes.',    icon: '📈' },
+  { id: 'adaboost', name: 'AdaBoost',               desc: 'Boosting adaptatif combinant des apprenants faibles.',         icon: '⚡' },
+  { id: 'xgboost',  name: 'XGBoost',               desc: 'Gradient boosting extrêmement performant et régularisé.',      icon: '🚀' },
 ];
 
 const ModelSelectionPage = () => {

@@ -5,6 +5,7 @@ import mlflow.sklearn
 import joblib
 import json
 import numpy as np
+from typing import Any, Dict
 
 # Correction encodage Windows
 if sys.platform == "win32":
@@ -14,8 +15,15 @@ if sys.platform == "win32":
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.linear_model import LogisticRegression
+try:
+    from xgboost import XGBClassifier # type: ignore
+    _xgboost_available = True
+except ImportError:
+    XGBClassifier = None
+    _xgboost_available = False
+    print("[WARN] xgboost non installé — modèle XGBoost ignoré. Installez-le via : pip install xgboost")
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
     classification_report, confusion_matrix
@@ -68,10 +76,10 @@ def train_and_log_model(model_name, model, params, X_train, X_test,
 
         # ── Log MLflow ───────────────────────────────────────────────────
         mlflow.log_metrics({
-            "accuracy":  round(accuracy,  4),
-            "precision": round(precision, 4),
-            "recall":    round(recall,    4),
-            "f1_score":  round(f1,        4)
+            "accuracy":  round(float(accuracy),  4),
+            "precision": round(float(precision), 4),
+            "recall":    round(float(recall),    4),
+            "f1_score":  round(float(f1),        4)
         })
         mlflow.sklearn.log_model(model, artifact_path="model")
 
@@ -93,10 +101,10 @@ def train_and_log_model(model_name, model, params, X_train, X_test,
         run_result = {
             "model":             model_name,
             "params":            params,
-            "accuracy":          round(accuracy,  4),
-            "precision":         round(precision, 4),
-            "recall":            round(recall,    4),
-            "f1_score":          round(f1,        4),
+            "accuracy":          round(float(accuracy),  4),
+            "precision":         round(float(precision), 4),
+            "recall":            round(float(recall),    4),
+            "f1_score":          round(float(f1),        4),
             "per_class_metrics": report_dict,
             "confusion_matrix":  cm,
             "classes":           list(label_names)
@@ -115,7 +123,7 @@ if __name__ == "__main__":
 
     # ── Chargement des paramètres depuis params.json ──────────────────
     params_file  = 'params.json'
-    selected_ids = ['knn', 'svm', 'rf', 'lr']
+    selected_ids = ['knn', 'svm', 'rf', 'lr', 'adaboost', 'xgboost']
     hparams      = {}
 
     if os.path.exists(params_file):
@@ -165,14 +173,26 @@ if __name__ == "__main__":
         except (ValueError, TypeError):
             _rf_max_depth = None
 
+    # Gestion propre de max_depth pour XGBoost
+    _xgb_max_depth = hparams.get('xgboost', {}).get('max_depth', None)
+    if _xgb_max_depth in ['', None, 0, 'None']:
+        _xgb_max_depth = 6
+    else:
+        try:
+            _xgb_max_depth = int(_xgb_max_depth)
+        except (ValueError, TypeError):
+            _xgb_max_depth = 6
+
     id_map = {
-        "knn": "KNN",
-        "svm": "SVM",
-        "rf":  "Random_Forest",
-        "lr":  "Logistic_Regression"
+        "knn":      "KNN",
+        "svm":      "SVM",
+        "rf":       "Random_Forest",
+        "lr":       "Logistic_Regression",
+        "adaboost": "AdaBoost",
+        "xgboost":  "XGBoost"
     }
 
-    models_config = {
+    models_config: Dict[str, Dict[str, Any]] = {
         "KNN": {
             "cls": KNeighborsClassifier,
             "params": {
@@ -202,8 +222,30 @@ if __name__ == "__main__":
                 "max_iter":     int(hparams.get('lr', {}).get('max_iter', 1000)),
                 "random_state": 42
             }
-        }
+        },
+        "AdaBoost": {
+            "cls": AdaBoostClassifier,
+            "params": {
+                "n_estimators": int(hparams.get('adaboost', {}).get('n_estimators', 100)),
+                "learning_rate": float(hparams.get('adaboost', {}).get('learning_rate', 1.0)),
+                "random_state": 42
+            }
+        },
     }
+
+    # XGBoost ajouté conditionnellement (dépendance optionnelle)
+    if _xgboost_available:
+        models_config["XGBoost"] = {
+            "cls": XGBClassifier,
+            "params": {
+                "n_estimators":  int(hparams.get('xgboost', {}).get('n_estimators', 100)),
+                "max_depth":     _xgb_max_depth,
+                "learning_rate": float(hparams.get('xgboost', {}).get('learning_rate', 0.1)),
+                "use_label_encoder": False,
+                "eval_metric":   "mlogloss",
+                "random_state":  42
+            }
+        }
 
     # ── Boucle d'entraînement ─────────────────────────────────────────
     best_score      = 0
@@ -253,11 +295,14 @@ if __name__ == "__main__":
         print(f"  Rapport JSON    : {metrics_path}")
 
         # Résumé comparatif
-        print(f"\n  {'─'*48}")
-        print(f"  {'Modèle':<22} {'Accuracy':>10} {'F1-Score':>10}")
-        print(f"  {'─'*48}")
+        print(f"\n  {'─'*64}")
+        print(f"  {'Modèle':<22} {'Accuracy':>10} {'Precision':>10} {'Recall':>8} {'F1-Score':>10}")
+        print(f"  {'─'*64}")
         for r in all_results:
-            print(f"  {r['model']:<22} {r['accuracy']:>10.4f} {r['f1_score']:>10.4f}")
-        print(f"  {'─'*48}")
+            print(f"  {r['model']:<22} {r['accuracy']:>10.4f} {r['precision']:>10.4f} "
+                  f"{r['recall']:>8.4f} {r['f1_score']:>10.4f}")
+        print(f"  {'─'*64}")
+        # Mise en évidence du meilleur modèle
+        print(f"  ★  Meilleur modèle : {best_model_info['name']}  (F1 = {best_score:.4f})")
     else:
         print("\n  [WARN] Aucun modèle n'a été entraîné.")

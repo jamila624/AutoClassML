@@ -90,23 +90,23 @@ const HomePage = () => {
         </div>
         
         <div className="mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 transition-all hover:border-brand-blue/30 group">
+          <div className="p-10 bg-white dark:bg-neutral-950 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-neutral-900 transition-all hover:border-brand-blue/30 group">
              <div className="p-5 bg-brand-beige/50 rounded-3xl group-hover:bg-brand-blue group-hover:text-white transition-colors duration-500">
                <Bike size={48} />
              </div>
-             <span className="font-bold text-2xl text-slate-800 dark:text-slate-200">Moto</span>
+             <span className="font-bold text-2xl text-slate-800 dark:text-neutral-200">Moto</span>
           </div>
-          <div className="p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 transition-all hover:border-brand-blue/30 group">
+          <div className="p-10 bg-white dark:bg-neutral-950 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-neutral-900 transition-all hover:border-brand-blue/30 group">
              <div className="p-5 bg-brand-beige/50 rounded-3xl group-hover:bg-brand-blue group-hover:text-white transition-colors duration-500">
                <Car size={48} />
              </div>
-             <span className="font-bold text-2xl text-slate-800 dark:text-slate-200">Voiture</span>
+             <span className="font-bold text-2xl text-slate-800 dark:text-neutral-200">Voiture</span>
           </div>
-          <div className="p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 transition-all hover:border-brand-blue/30 group">
+          <div className="p-10 bg-white dark:bg-neutral-950 rounded-[2.5rem] flex flex-col items-center gap-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-neutral-900 transition-all hover:border-brand-blue/30 group">
              <div className="p-5 bg-brand-beige/50 rounded-3xl group-hover:bg-brand-blue group-hover:text-white transition-colors duration-500">
                <Truck size={48} />
              </div>
-             <span className="font-bold text-2xl text-slate-800 dark:text-slate-200">Camion</span>
+             <span className="font-bold text-2xl text-slate-800 dark:text-neutral-200">Camion</span>
           </div>
         </div>
       </section>
@@ -119,7 +119,7 @@ const HomePage = () => {
         </h2>
         <div className="grid md:grid-cols-3 gap-16">
           <div className="flex flex-col items-center text-center space-y-6 group">
-            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-slate-800 rotate-6 group-hover:rotate-0 transition-transform duration-500 scale-110">
+            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-neutral-900 rotate-6 group-hover:rotate-0 transition-transform duration-500 scale-110">
               <Settings size={44} />
             </div>
             <div className="space-y-4">
@@ -129,7 +129,7 @@ const HomePage = () => {
           </div>
           
           <div className="flex flex-col items-center text-center space-y-6 group">
-            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-slate-800 -rotate-3 group-hover:rotate-0 transition-transform duration-500 scale-110">
+            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-neutral-900 -rotate-3 group-hover:rotate-0 transition-transform duration-500 scale-110">
               <BrainCircuit size={44} />
             </div>
             <div className="space-y-4">
@@ -139,7 +139,7 @@ const HomePage = () => {
           </div>
 
           <div className="flex flex-col items-center text-center space-y-6 group">
-            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-slate-800 rotate-3 group-hover:rotate-0 transition-transform duration-500 scale-110">
+            <div className="h-24 w-24 rounded-3xl bg-brand-beige/80 text-brand-blue flex items-center justify-center shadow-lg border-2 border-white dark:border-neutral-900 rotate-3 group-hover:rotate-0 transition-transform duration-500 scale-110">
               <BarChart size={44} />
             </div>
             <div className="space-y-4">

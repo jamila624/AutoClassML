@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/3723b5b876c44e47ad9edb7449a3be1d/artifacts
+end_time: 1778700233771
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: 3723b5b876c44e47ad9edb7449a3be1d
+run_name: AdaBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778700230026
+status: 3
+tags: []
+user_id: dell

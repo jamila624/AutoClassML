@@ -44,7 +44,7 @@ const RunsPage = () => {
   return (
     <div className="max-w-7xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
       
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-slate-200 dark:border-neutral-900 pb-8">
         <div>
           <h1 className="text-4xl font-extrabold flex items-center gap-4 text-slate-900 dark:text-white">
              <div className="p-2 bg-brand-blue/10 rounded-xl"><Database className="text-brand-blue" size={32} /></div>
@@ -56,7 +56,7 @@ const RunsPage = () => {
         <div className="flex items-center gap-4 w-full md:w-auto">
           <button 
             onClick={fetchData}
-            className="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-colors"
+            className="p-3 rounded-xl bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 hover:bg-slate-200 transition-colors"
           >
             <RotateCcw size={20} />
           </button>
@@ -65,7 +65,7 @@ const RunsPage = () => {
              <select 
                 value={filterType} 
                 onChange={(e) => setFilterType(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-slate-100 dark:bg-slate-800 border-none rounded-xl font-bold text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-brand-blue transition-all cursor-pointer appearance-none"
+                className="w-full pl-12 pr-4 py-3 bg-slate-100 dark:bg-neutral-900 border-none rounded-xl font-bold text-slate-700 dark:text-neutral-200 focus:ring-2 focus:ring-brand-blue transition-all cursor-pointer appearance-none"
              >
                 <option value="Tous">Filtrer par type</option>
                 <option value="Voiture">Voitures</option>
@@ -81,18 +81,18 @@ const RunsPage = () => {
            Chargement de l'historique...
         </div>
       ) : history.length === 0 ? (
-        <div className="py-32 text-center bg-slate-100 dark:bg-slate-900/50 rounded-3xl border-2 border-dashed border-slate-200 dark:border-slate-800">
-           <div className="inline-flex p-6 bg-white dark:bg-slate-800 rounded-full shadow-sm mb-6 text-slate-300">
+        <div className="py-32 text-center bg-slate-100 dark:bg-neutral-950/50 rounded-3xl border-2 border-dashed border-slate-200 dark:border-neutral-900">
+           <div className="inline-flex p-6 bg-white dark:bg-neutral-900 rounded-full shadow-sm mb-6 text-slate-300">
              <Search size={48} />
            </div>
-           <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Aucune prédiction enregistrée</h3>
+           <h3 className="text-2xl font-bold text-slate-800 dark:text-neutral-200">Aucune prédiction enregistrée</h3>
            <p className="text-slate-500 mt-2">Commencez une classification pour voir les résultats apparaître ici.</p>
         </div>
       ) : (
         <>
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="lg:col-span-1 border-slate-200 dark:border-slate-800 shadow-xl dark:bg-slate-900">
-              <CardHeader className="bg-slate-50 dark:bg-slate-800/50 border-b dark:border-slate-800">
+            <Card className="lg:col-span-1 border-slate-200 dark:border-neutral-900 shadow-xl dark:bg-neutral-950">
+              <CardHeader className="bg-slate-50 dark:bg-neutral-900/50 border-b dark:border-neutral-900">
                 <CardTitle className="text-lg font-bold">Répartition Réelle</CardTitle>
               </CardHeader>
               <CardContent className="h-80 flex flex-col items-center justify-center pt-6">
@@ -111,7 +111,7 @@ const RunsPage = () => {
                 </ResponsiveContainer>
                 <div className="flex gap-6 mt-4">
                    {distributionData.map(d => (
-                     <div key={d.name} className="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-400">
+                     <div key={d.name} className="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-neutral-400">
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[d.name.toLowerCase()] }} />
                         {d.name} ({d.value})
                      </div>
@@ -120,8 +120,8 @@ const RunsPage = () => {
               </CardContent>
             </Card>
 
-            <Card className="lg:col-span-2 border-slate-200 dark:border-slate-800 shadow-xl dark:bg-slate-900 overflow-hidden">
-               <CardHeader className="bg-slate-50 dark:bg-slate-800/50 border-b dark:border-slate-800">
+            <Card className="lg:col-span-2 border-slate-200 dark:border-neutral-900 shadow-xl dark:bg-neutral-950 overflow-hidden">
+               <CardHeader className="bg-slate-50 dark:bg-neutral-900/50 border-b dark:border-neutral-900">
                  <CardTitle className="text-lg font-bold">Dernières Activités</CardTitle>
                </CardHeader>
                <CardContent className="p-0">
@@ -149,8 +149,8 @@ const RunsPage = () => {
             </Card>
           </div>
 
-          <Card className="border-slate-200 dark:border-slate-800 shadow-2xl dark:bg-slate-900 overflow-hidden">
-             <CardHeader className="p-8 border-b dark:border-slate-800 flex flex-row justify-between items-center bg-white dark:bg-slate-900">
+          <Card className="border-slate-200 dark:border-neutral-900 shadow-2xl dark:bg-neutral-950 overflow-hidden">
+             <CardHeader className="p-8 border-b dark:border-neutral-900 flex flex-row justify-between items-center bg-white dark:bg-neutral-950">
                <CardTitle className="text-xl font-black text-slate-800 dark:text-white">REGISTRE COMPLET</CardTitle>
                <div className="text-xs font-bold text-brand-blue dark:text-blue-400 tracking-widest uppercase bg-brand-blue/10 px-4 py-2 rounded-lg">
                   {filteredHistory.length} Prédictions Total
@@ -159,7 +159,7 @@ const RunsPage = () => {
              <CardContent className="p-0">
                 <div className="overflow-x-auto">
                    <table className="w-full text-left">
-                      <thead className="bg-slate-50 dark:bg-slate-800/30 text-slate-400 uppercase text-[10px] font-black tracking-widest">
+                      <thead className="bg-slate-50 dark:bg-neutral-900/30 text-slate-400 uppercase text-[10px] font-black tracking-widest">
                          <tr>
                             <th className="px-8 py-6">Timestamp</th>
                             <th className="px-8 py-6">Résultat IA</th>
@@ -181,8 +181,8 @@ const RunsPage = () => {
                                     {item.prediction}
                                  </span>
                               </td>
-                              <td className="px-8 py-6 font-bold text-slate-600 dark:text-slate-300">{item.poids}</td>
-                              <td className="px-8 py-6 font-bold text-slate-600 dark:text-slate-300">{item.puissance}</td>
+                              <td className="px-8 py-6 font-bold text-slate-600 dark:text-neutral-300">{item.poids}</td>
+                              <td className="px-8 py-6 font-bold text-slate-600 dark:text-neutral-300">{item.puissance}</td>
                               <td className="px-8 py-6 text-slate-500 capitalize">{item.carburant}</td>
                               <td className="px-8 py-6 text-slate-500">{item.portes}</td>
                            </tr>

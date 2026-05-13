@@ -1,12 +1,14 @@
 import React from 'react';
 import { Card, CardContent } from '../ui';
-import { Cpu, Network, Binary, TrendingUp } from 'lucide-react';
+import { Cpu, Network, Binary, TrendingUp, Zap, BarChart2 } from 'lucide-react';
 
 const availableModels = [
-  { id: 'knn', name: 'KNN', type: 'K-Nearest Neighbors', icon: Network },
-  { id: 'svm', name: 'SVM', type: 'Support Vector Machine', icon: Cpu },
-  { id: 'rf', name: 'Random Forest', type: 'Ensemble Learning', icon: Binary },
-  { id: 'lr', name: 'Logistic Regression', type: 'Linear Model', icon: TrendingUp },
+  { id: 'knn',      name: 'KNN',                 type: 'K-Nearest Neighbors',     icon: Network    },
+  { id: 'svm',      name: 'SVM',                 type: 'Support Vector Machine',  icon: Cpu        },
+  { id: 'rf',       name: 'Random Forest',        type: 'Ensemble Learning',       icon: Binary     },
+  { id: 'lr',       name: 'Logistic Regression', type: 'Linear Model',            icon: TrendingUp },
+  { id: 'adaboost', name: 'AdaBoost',            type: 'Boosting Ensemble',       icon: Zap        },
+  { id: 'xgboost',  name: 'XGBoost',             type: 'Gradient Boosting',       icon: BarChart2  },
 ];
 
 const ModelSelector = ({ selectedModels, onToggleModel }) => {

@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "D:/projet_machine_learning/backend/venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "D:/projet_machine_learning/backend"
+  ],
+  "pyrefly.pythonInterpreter": "D:/projet_machine_learning/backend/venv/Scripts/python.exe",
+  "pyrefly.projectRoot": "D:/projet_machine_learning/backend",
+  "css.lint.unknownAtRules": "ignore"
+}

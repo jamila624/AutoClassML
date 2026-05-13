@@ -1,0 +1,14 @@
+artifact_uri: file:D:/projet_machine_learning/project_nomProjet/backend/../mlruns/545386610930194815/d397437171854cd6aacfdb990cf645e0/artifacts
+end_time: 1778700230005
+entry_point_name: ''
+experiment_id: '545386610930194815'
+lifecycle_stage: active
+run_id: d397437171854cd6aacfdb990cf645e0
+run_name: XGBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778700222100
+status: 3
+tags: []
+user_id: dell

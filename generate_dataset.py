@@ -19,7 +19,7 @@ def generate_vehicles(n, type_vehicule):
         poids = np.random.randint(400, 2800, n)
         puissance = np.random.randint(45, 450, n)
         carburant = np.random.choice(['essence', 'diesel', 'electrique'], n, p=[0.5, 0.3, 0.2])
-        portes = np.random.choice([2, 3, 4, 5], n)
+        portes = np.random.choice([2, 3, 4], n)
     elif type_vehicule == 'camion':
         poids = np.random.randint(2200, 25000, n)
         puissance = np.random.randint(150, 900, n)

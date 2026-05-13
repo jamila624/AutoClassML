@@ -1,13 +1,10 @@
 {
     "selected_models": [
-        "knn",
-        "svm",
-        "rf",
-        "lr"
+        "xgboost"
     ],
     "params": {
         "knn": {
-            "k": 8,
+            "k": 5,
             "weights": "uniform"
         },
         "svm": {
@@ -21,6 +18,15 @@
         },
         "lr": {
             "max_iter": 100
+        },
+        "adaboost": {
+            "n_estimators": 50,
+            "learning_rate": 1
+        },
+        "xgboost": {
+            "n_estimators": 100,
+            "max_depth": 6,
+            "learning_rate": 0.1
         }
     }
 }
